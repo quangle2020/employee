@@ -7,6 +7,7 @@ import com.quanglv.gateway.service.dto.GetTokenResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,7 +19,7 @@ public class LoginResource {
     @Autowired
     private RestOperationsUtils restOperationsUtils;
 
-    @PostMapping(value = "/get-token", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/get-token")
     public ResponseEntity<?> getToken(){
         String apiName = "authorization/oauth/token?grant_type=password&username=admin&password=123456&scope=trust";
         GetTokenResponseDTO response = restOperationsUtils.executeGetToken(domainConfig.getAuthorizationDomain(), apiName, ConstantsTemplate.httpMethod_POST, null, GetTokenResponseDTO.class);
