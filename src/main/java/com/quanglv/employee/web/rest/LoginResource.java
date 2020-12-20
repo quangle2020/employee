@@ -1,9 +1,9 @@
-package com.example.demo.web.rest;
+package com.quanglv.employee.web.rest;
 
-import com.example.demo.config.DomainConfig;
-import com.example.demo.config.restTemplate.ConstantsTemplate;
-import com.example.demo.config.restTemplate.RestOperationsUtils;
-import com.example.demo.service.dto.GetTokenResponseDTO;
+import com.quanglv.employee.config.DomainConfig;
+import com.quanglv.employee.config.restTemplate.ConstantsTemplate;
+import com.quanglv.employee.config.restTemplate.RestOperationsUtils;
+import com.quanglv.employee.service.dto.GetTokenResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

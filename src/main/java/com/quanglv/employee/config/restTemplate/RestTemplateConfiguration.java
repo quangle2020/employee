@@ -1,4 +1,4 @@
-package com.example.demo.config.restTemplate;
+package com.quanglv.employee.config.restTemplate;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
