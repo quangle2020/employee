@@ -1,4 +1,4 @@
-package com.quanglv.employee.config;
+package com.quanglv.gateway.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

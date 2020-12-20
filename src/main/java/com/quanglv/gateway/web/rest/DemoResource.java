@@ -1,4 +1,4 @@
-package com.quanglv.employee.web.rest;
+package com.quanglv.gateway.web.rest;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

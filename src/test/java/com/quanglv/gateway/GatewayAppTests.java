@@ -1,10 +1,10 @@
-package com.quanglv.employee;
+package com.quanglv.gateway;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DemoApplicationTests {
+class GatewayAppTests {
 
     @Test
     void contextLoads() {

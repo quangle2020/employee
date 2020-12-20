@@ -1,4 +1,4 @@
-package com.quanglv.employee.service.dto;
+package com.quanglv.gateway.service.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

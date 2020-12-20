@@ -1,13 +1,13 @@
-package com.quanglv.employee;
+package com.quanglv.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoApplication {
+public class GatewayApp {
 
     public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class, args);
+        SpringApplication.run(GatewayApp.class, args);
     }
 
 }

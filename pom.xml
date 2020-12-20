@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.quanglv</groupId>
-    <artifactId>employee</artifactId>
+    <artifactId>gateway</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>employee</name>
+    <name>gateway</name>
     <description>employee project for Spring Boot</description>
 
     <properties>

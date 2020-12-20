@@ -1,4 +1,4 @@
-package com.quanglv.employee.config.restTemplate;
+package com.quanglv.gateway.config.restTemplate;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
