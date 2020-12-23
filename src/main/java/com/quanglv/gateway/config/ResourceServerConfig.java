@@ -22,7 +22,8 @@ public class ResourceServerConfig extends WebSecurityConfigurerAdapter {
                 anonymous().disable()
                 .authorizeRequests()
                 .antMatchers("/api/**").authenticated()
+//                .anyRequest().hasRole("ADMIN")
                 .and().oauth2ResourceServer().jwt();
+//                .and().oauth2ResourceServer().jwt();
     }
-
 }

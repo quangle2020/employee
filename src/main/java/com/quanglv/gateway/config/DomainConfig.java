@@ -13,4 +13,7 @@ import org.springframework.context.annotation.PropertySource;
 public class DomainConfig {
     @Value("${authorization-domain}")
     private String authorizationDomain;
+
+    @Value("${resource-domain}")
+    private String resourceDomain;
 }

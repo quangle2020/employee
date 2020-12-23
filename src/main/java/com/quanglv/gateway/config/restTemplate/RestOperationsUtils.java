@@ -1,9 +1,12 @@
 package com.quanglv.gateway.config.restTemplate;
 
+import com.quanglv.gateway.service.dto.TokenRequestDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.stereotype.Component;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestOperations;
 
@@ -43,14 +46,21 @@ public class RestOperationsUtils {
      * @param <T>
      * @return
      */
-    public <T> T executeGetToken(String hostName, String apiName, HttpMethod httpMethod, Object request,
+    public <T> T executeGetToken(String hostName, String apiName, HttpMethod httpMethod, TokenRequestDTO request,
                                 Class<T> responseType) {
         try {
+            // set param
+            MultiValueMap<String, Object> postParameters = new LinkedMultiValueMap<>();
+            postParameters.add("grant_type", request.getGrant_type());
+            postParameters.add("username", request.getUsername());
+            postParameters.add("password", request.getPassword());
+            postParameters.add("scope", request.getScope());
+
             HttpHeaders headers = new HttpHeaders();
-//            headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
+            headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
             headers.add("Authorization","Basic Y2xpZW50X2lkOmNsaWVudF9zZWNyZXQ=");
-            request = null;
-            HttpEntity<?> entity = new HttpEntity<>(request, headers);
+
+            HttpEntity<MultiValueMap<String, Object>> entity = new HttpEntity<>(postParameters, headers);
             // RestTemplate
 
             // Call API
@@ -67,8 +77,8 @@ public class RestOperationsUtils {
                                 Class<T> responseType, String token) {
         try {
             HttpHeaders headers = new HttpHeaders();
-//            headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
-            headers.add("Authorization","Basic Y2xpZW50X2lkOmNsaWVudF9zZWNyZXQ=");
+            headers.setContentType(MediaType.APPLICATION_JSON);
+//            headers.add("Authorization","Basic Y2xpZW50X2lkOmNsaWVudF9zZWNyZXQ=");
             if (token != null && token.length() > 0) {
                 headers.add(AUTHORIZATION_HEADER_NAME, BEARER_HEADER_NAME + token);
             }
