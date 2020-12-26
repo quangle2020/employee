@@ -6,24 +6,15 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 
 @Configuration
-//@EnableResourceServer
 public class ResourceServerConfig extends WebSecurityConfigurerAdapter {
-
-//    private static final String RESOURCE_ID = "resource_id";
-//
-//    @Override
-//    public void configure(ResourceServerSecurityConfigurer resources) {
-//        resources.resourceId(RESOURCE_ID).stateless(false);
-//    }
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        http.
-                anonymous().disable()
+        http
+                 .csrf().disable()
+                .anonymous().disable()
                 .authorizeRequests()
                 .antMatchers("/api/**").authenticated()
-//                .anyRequest().hasRole("ADMIN")
                 .and().oauth2ResourceServer().jwt();
-//                .and().oauth2ResourceServer().jwt();
     }
 }
